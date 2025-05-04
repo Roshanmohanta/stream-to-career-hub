@@ -1,3 +1,4 @@
+
 import { toast } from "@/components/ui/sonner";
 
 // Define the base API URL
@@ -569,4 +570,184 @@ export const getMockColleges = (courseId?: number) => {
       applicationProcess: "SET entrance exam followed by GE-PI",
       imageUrl: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1000&auto=format&fit=crop",
       websiteUrl: "https://www.symbiosis.ac.in/",
-      courseId
+      courseId: 4
+    },
+    
+    // Additional colleges for B.Com (courseId: 5)
+    {
+      id: 24,
+      name: "St. Xavier's College",
+      description: "St. Xavier's College is known for its excellent commerce program and strong placement record.",
+      location: "Kolkata",
+      avgSalary: "₹6-12 LPA",
+      fees: "₹40,000 per year",
+      companies: ["Deloitte", "PwC", "KPMG", "HDFC Bank", "ICICI Bank"],
+      applicationDeadline: "June 5, 2025",
+      applicationProcess: "Merit-based through university portal",
+      imageUrl: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1000&auto=format&fit=crop",
+      websiteUrl: "https://www.sxccal.edu/",
+      courseId: 5
+    },
+    {
+      id: 25,
+      name: "Loyola College",
+      description: "Loyola College offers a comprehensive commerce program with emphasis on practical skills and industry exposure.",
+      location: "Chennai",
+      avgSalary: "₹5-10 LPA",
+      fees: "₹35,000 per year",
+      companies: ["TCS", "Infosys", "CTS", "HCL", "Wipro"],
+      applicationDeadline: "May 25, 2025",
+      applicationProcess: "Merit-based admission process",
+      imageUrl: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1000&auto=format&fit=crop",
+      websiteUrl: "https://www.loyolacollege.edu/",
+      courseId: 5
+    },
+    {
+      id: 26,
+      name: "Christ University",
+      description: "Christ University's commerce program is known for its rigorous curriculum and strong industry connections.",
+      location: "Bangalore",
+      avgSalary: "₹7-13 LPA",
+      fees: "₹1.2 Lakhs per year",
+      companies: ["EY", "Goldman Sachs", "JP Morgan", "Accenture"],
+      applicationDeadline: "April 15, 2025",
+      applicationProcess: "University entrance test and interview",
+      imageUrl: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1000&auto=format&fit=crop",
+      websiteUrl: "https://www.christuniversity.in/",
+      courseId: 5
+    },
+    
+    // Additional colleges for BA Literature (courseId: 6)
+    {
+      id: 27,
+      name: "Jadavpur University",
+      description: "Jadavpur University is renowned for its literature program with distinguished faculty and rich academic tradition.",
+      location: "Kolkata",
+      avgSalary: "₹4-8 LPA",
+      fees: "₹20,000 per year",
+      companies: ["Publishing Houses", "Media Companies", "Educational Institutions"],
+      applicationDeadline: "June 10, 2025",
+      applicationProcess: "University entrance exam",
+      imageUrl: "https://images.unsplash.com/photo-1474932430478-367dbb6832c1?q=80&w=1000&auto=format&fit=crop",
+      websiteUrl: "http://www.jaduniv.edu.in/",
+      courseId: 6
+    },
+    {
+      id: 28,
+      name: "Presidency University",
+      description: "Presidency University offers a prestigious literature program with focus on critical analysis and literary theory.",
+      location: "Kolkata",
+      avgSalary: "₹4-7 LPA",
+      fees: "₹18,000 per year",
+      companies: ["Educational Institutions", "Publishing Houses", "Content Creation"],
+      applicationDeadline: "May 20, 2025",
+      applicationProcess: "Merit-based selection through entrance test",
+      imageUrl: "https://images.unsplash.com/photo-1474932430478-367dbb6832c1?q=80&w=1000&auto=format&fit=crop",
+      websiteUrl: "https://www.presiuniv.ac.in/",
+      courseId: 6
+    },
+    
+    // Additional colleges for BA Psychology (courseId: 7)
+    {
+      id: 29,
+      name: "Christ University",
+      description: "Christ University's psychology program is known for its comprehensive curriculum and practical applications.",
+      location: "Bangalore",
+      avgSalary: "₹5-10 LPA",
+      fees: "₹1.2 Lakhs per year",
+      companies: ["Hospitals", "NGOs", "Educational Institutions", "Corporate"],
+      applicationDeadline: "April 15, 2025",
+      applicationProcess: "University entrance test and interview",
+      imageUrl: "https://images.unsplash.com/photo-1576669801775-ff43c5ab079d?q=80&w=1000&auto=format&fit=crop",
+      websiteUrl: "https://www.christuniversity.in/",
+      courseId: 7
+    },
+    {
+      id: 30,
+      name: "Fergusson College",
+      description: "Fergusson College offers a well-structured psychology program with focus on research and clinical applications.",
+      location: "Pune",
+      avgSalary: "₹4-9 LPA",
+      fees: "₹30,000 per year",
+      companies: ["Healthcare Organizations", "Research Institutions", "Counseling Centers"],
+      applicationDeadline: "June 5, 2025",
+      applicationProcess: "Merit-based through university portal",
+      imageUrl: "https://images.unsplash.com/photo-1576669801775-ff43c5ab079d?q=80&w=1000&auto=format&fit=crop",
+      websiteUrl: "https://www.fergusson.edu/",
+      courseId: 7
+    },
+    {
+      id: 31,
+      name: "Kamala Nehru College",
+      description: "Kamala Nehru College provides a comprehensive psychology education with well-equipped laboratories and research facilities.",
+      location: "Delhi",
+      avgSalary: "₹5-8 LPA",
+      fees: "₹25,000 per year",
+      companies: ["Hospitals", "Schools", "Corporate Organizations", "NGOs"],
+      applicationDeadline: "June 20, 2025",
+      applicationProcess: "Merit-based through university portal",
+      imageUrl: "https://images.unsplash.com/photo-1576669801775-ff43c5ab079d?q=80&w=1000&auto=format&fit=crop",
+      websiteUrl: "https://www.knc.edu.in/",
+      courseId: 7
+    },
+    
+    // Additional colleges for B.Sc Chemistry (courseId: 8)
+    {
+      id: 32,
+      name: "St. Stephen's College",
+      description: "St. Stephen's College offers an excellent chemistry program with well-equipped laboratories and distinguished faculty.",
+      location: "Delhi",
+      avgSalary: "₹5-10 LPA",
+      fees: "₹40,000 per year",
+      companies: ["Pharmaceutical Companies", "Research Institutions", "Chemical Industries"],
+      applicationDeadline: "June 15, 2025",
+      applicationProcess: "Merit-based through university portal and interview",
+      imageUrl: "https://images.unsplash.com/photo-1603126857599-f6e157fa2fe6?q=80&w=1000&auto=format&fit=crop",
+      websiteUrl: "https://www.ststephens.edu/",
+      courseId: 8
+    },
+    {
+      id: 33,
+      name: "Loyola College",
+      description: "Loyola College's chemistry department is known for its research facilities and industry connections.",
+      location: "Chennai",
+      avgSalary: "₹5-9 LPA",
+      fees: "₹35,000 per year",
+      companies: ["Pharmaceutical Industries", "DRDO", "Research Labs"],
+      applicationDeadline: "May 25, 2025",
+      applicationProcess: "Merit-based admission process",
+      imageUrl: "https://images.unsplash.com/photo-1603126857599-f6e157fa2fe6?q=80&w=1000&auto=format&fit=crop",
+      websiteUrl: "https://www.loyolacollege.edu/",
+      courseId: 8
+    }
+  ];
+  
+  if (courseId) {
+    return colleges.filter(college => college.courseId === courseId);
+  }
+  
+  return colleges;
+};
+
+// Mock API - sample methods for college comparison
+export const mockAPI = {
+  getStreams: () => {
+    return [
+      { id: "science", name: "Science", courseCount: 5 },
+      { id: "commerce", name: "Commerce", courseCount: 5 },
+      { id: "arts", name: "Arts & Humanities", courseCount: 6 }
+    ];
+  },
+  getCourses: (streamId?: string) => {
+    return getMockCourses(streamId);
+  },
+  getCourseById: (id: number) => {
+    return getMockCourses().find(course => course.id === id);
+  },
+  getColleges: (courseId?: number) => {
+    return getMockColleges(courseId);
+  },
+  getCollegeById: (id: number) => {
+    return getMockColleges().find(college => college.id === id);
+  }
+};
