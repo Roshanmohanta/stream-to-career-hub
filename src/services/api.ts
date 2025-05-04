@@ -1,4 +1,3 @@
-
 import { toast } from "@/components/ui/sonner";
 
 // Define the base API URL
@@ -451,176 +450,123 @@ export const getMockColleges = (courseId?: number) => {
       imageUrl: "https://images.unsplash.com/photo-1607237138185-eedd9c632b0b?q=80&w=1000&auto=format&fit=crop",
       websiteUrl: "https://www.jnu.ac.in/",
       courseId: 7
-    }
-  ];
-  
-  if (courseId) {
-    return colleges.filter(college => college.courseId === courseId);
-  }
-  
-  return colleges;
-};
-
-export const getMockJobs = (filters?: Record<string, any>) => {
-  // Sample job data
-  const jobs = [
+    },
+    
+    // Additional colleges for B.Tech Computer Science (courseId: 1)
     {
-      id: 1,
-      title: "Software Engineer",
-      company: "TechSolutions Inc.",
-      location: "Bangalore",
-      jobType: "full-time",
-      salary: "₹12-18 LPA",
-      experience: "2-4 years",
-      postedDate: "2025-05-01",
-      deadline: "2025-06-01",
-      description: "We're looking for a skilled Software Engineer to join our team. You will be responsible for developing high-quality applications using modern technologies and best practices.",
-      requirements: [
-        "Bachelor's degree in Computer Science or related field",
-        "2+ years of experience in software development",
-        "Proficiency in JavaScript, TypeScript, and React",
-        "Experience with RESTful APIs and backend technologies",
-        "Strong problem-solving skills and attention to detail"
-      ],
-      responsibilities: [
-        "Design and develop high-quality code for various projects",
-        "Collaborate with cross-functional teams to define and implement features",
-        "Debug production issues and implement fixes",
-        "Optimize applications for maximum speed and scalability",
-        "Participate in code reviews and knowledge sharing"
-      ],
-      companyLogoUrl: "https://via.placeholder.com/150",
-      applicationUrl: "https://example.com/apply",
-      industry: "technology"
+      id: 16,
+      name: "National Institute of Technology, Warangal",
+      description: "NIT Warangal is among India's leading technical institutes known for quality education in engineering and research excellence.",
+      location: "Warangal",
+      avgSalary: "₹10-18 LPA",
+      fees: "₹1.5 Lakhs per year",
+      companies: ["Microsoft", "Amazon", "Qualcomm", "Morgan Stanley", "Uber"],
+      applicationDeadline: "June 5, 2025",
+      applicationProcess: "JEE Main followed by counseling",
+      imageUrl: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?q=80&w=1000&auto=format&fit=crop",
+      websiteUrl: "https://www.nitw.ac.in/",
+      courseId: 1
     },
     {
-      id: 2,
-      title: "Data Scientist",
-      company: "Analytics Plus",
-      location: "Hyderabad",
-      jobType: "full-time",
-      salary: "₹15-22 LPA",
-      experience: "3-5 years",
-      postedDate: "2025-04-25",
-      deadline: "2025-05-25",
-      description: "Join our data science team to build predictive models and extract insights from complex datasets. You'll work on challenging problems and collaborate with talented professionals.",
-      requirements: [
-        "Master's or PhD in Statistics, Computer Science, or related field",
-        "3+ years of experience in data science or analytics",
-        "Proficiency in Python, R, and SQL",
-        "Experience with machine learning frameworks",
-        "Strong mathematical and statistical knowledge"
-      ],
-      responsibilities: [
-        "Develop and implement machine learning algorithms",
-        "Process, clean, and validate data for analysis",
-        "Build data visualization tools and dashboards",
-        "Communicate findings to non-technical stakeholders",
-        "Keep up-to-date with the latest industry trends"
-      ],
-      companyLogoUrl: "https://via.placeholder.com/150",
-      applicationUrl: "https://example.com/apply",
-      industry: "technology"
+      id: 17,
+      name: "Vellore Institute of Technology",
+      description: "VIT is a prestigious private university known for its strong focus on research, innovation and global education standards.",
+      location: "Vellore",
+      avgSalary: "₹8-16 LPA",
+      fees: "₹2.8 Lakhs per year",
+      companies: ["TCS", "Infosys", "Wipro", "HCL", "Cognizant"],
+      applicationDeadline: "April 20, 2025",
+      applicationProcess: "VITEEE entrance exam",
+      imageUrl: "https://images.unsplash.com/photo-1513077202514-c511b41bd4c7?q=80&w=1000&auto=format&fit=crop",
+      websiteUrl: "https://vit.ac.in/",
+      courseId: 1
+    },
+    
+    // Additional colleges for MBBS (courseId: 2)
+    {
+      id: 18,
+      name: "King George's Medical University",
+      description: "KGMU is one of the oldest medical institutions in India with excellent clinical training and research facilities.",
+      location: "Lucknow",
+      avgSalary: "₹10-15 LPA",
+      fees: "₹1.2 Lakhs per year",
+      companies: ["Apollo Hospitals", "Fortis Healthcare", "Medanta"],
+      applicationDeadline: "May 25, 2025",
+      applicationProcess: "NEET-UG followed by counseling",
+      imageUrl: "https://images.unsplash.com/photo-1504439904031-93ded9f93e4e?q=80&w=1000&auto=format&fit=crop",
+      websiteUrl: "https://www.kgmu.org/",
+      courseId: 2
     },
     {
-      id: 3,
-      title: "Marketing Manager",
-      company: "BrandBoost",
+      id: 19,
+      name: "Seth G.S. Medical College",
+      description: "One of the premier medical institutions attached to the KEM Hospital with strong clinical exposure and research opportunities.",
       location: "Mumbai",
-      jobType: "full-time",
-      salary: "₹10-15 LPA",
-      experience: "5+ years",
-      postedDate: "2025-04-28",
-      deadline: "2025-05-28",
-      description: "Lead our marketing efforts to increase brand awareness and drive customer engagement. You'll develop and execute marketing strategies across multiple channels.",
-      requirements: [
-        "Bachelor's degree in Marketing, Business, or related field",
-        "5+ years of experience in marketing",
-        "Experience with digital marketing and social media",
-        "Strong analytical and project management skills",
-        "Excellent communication and leadership abilities"
-      ],
-      responsibilities: [
-        "Develop and implement comprehensive marketing strategies",
-        "Manage marketing budget and analyze campaign performance",
-        "Coordinate with creative teams to produce engaging content",
-        "Monitor competition and identify market trends",
-        "Supervise marketing team and their activities"
-      ],
-      companyLogoUrl: "https://via.placeholder.com/150",
-      applicationUrl: "https://example.com/apply",
-      industry: "marketing"
+      avgSalary: "₹12-16 LPA",
+      fees: "₹1.3 Lakhs per year",
+      companies: ["Lilavati Hospital", "Kokilaben Hospital", "Tata Memorial"],
+      applicationDeadline: "June 10, 2025",
+      applicationProcess: "NEET-UG followed by state counseling",
+      imageUrl: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?q=80&w=1000&auto=format&fit=crop",
+      websiteUrl: "https://www.kem.edu/",
+      courseId: 2
+    },
+    
+    // Additional colleges for B.Sc Physics (courseId: 3)
+    {
+      id: 20,
+      name: "St. Xavier's College",
+      description: "St. Xavier's College is renowned for its excellent science programs and research-oriented education in physics.",
+      location: "Mumbai",
+      avgSalary: "₹5-9 LPA",
+      fees: "₹35,000 per year",
+      companies: ["BARC", "ISRO", "TIFR", "Research Institutions"],
+      applicationDeadline: "June 15, 2025",
+      applicationProcess: "Merit-based through university portal",
+      imageUrl: "https://images.unsplash.com/photo-1591123120675-6f7f1aae0e5b?q=80&w=1000&auto=format&fit=crop",
+      websiteUrl: "https://www.xaviers.edu/",
+      courseId: 3
     },
     {
-      id: 4,
-      title: "Financial Analyst",
-      company: "Global Investments Ltd.",
-      location: "Delhi",
-      jobType: "full-time",
-      salary: "₹8-12 LPA",
-      experience: "2-4 years",
-      postedDate: "2025-05-02",
-      deadline: "2025-06-02",
-      description: "Join our finance team to analyze market trends, prepare financial forecasts, and support investment decisions. You'll play a key role in our company's financial strategy.",
-      requirements: [
-        "Bachelor's degree in Finance, Accounting, or Business",
-        "2+ years of financial analysis experience",
-        "Strong analytical and financial modeling skills",
-        "Proficiency in Excel and financial software",
-        "CFA or pursuing CFA is a plus"
-      ],
-      responsibilities: [
-        "Prepare financial forecasts and budgets",
-        "Analyze market trends and investment opportunities",
-        "Create financial models and reports",
-        "Support strategic decision-making with financial insights",
-        "Monitor and report on financial performance"
-      ],
-      companyLogoUrl: "https://via.placeholder.com/150",
-      applicationUrl: "https://example.com/apply",
-      industry: "finance"
+      id: 21,
+      name: "Presidency College",
+      description: "Presidency College has a distinguished history of excellence in physics education with modern laboratory facilities.",
+      location: "Kolkata",
+      avgSalary: "₹4-8 LPA",
+      fees: "₹18,000 per year",
+      companies: ["IISER", "IIT Research Labs", "Educational Institutions"],
+      applicationDeadline: "May 30, 2025",
+      applicationProcess: "Merit-based admission through university",
+      imageUrl: "https://images.unsplash.com/photo-1636466497217-06a6f914e4f4?q=80&w=1000&auto=format&fit=crop",
+      websiteUrl: "https://www.presiuniv.ac.in/",
+      courseId: 3
     },
-  ];
-  
-  // Apply filters if provided
-  if (filters) {
-    let filteredJobs = [...jobs];
     
-    if (filters.keyword) {
-      const keyword = filters.keyword.toLowerCase();
-      filteredJobs = filteredJobs.filter(job => 
-        job.title.toLowerCase().includes(keyword) || 
-        job.company.toLowerCase().includes(keyword) ||
-        job.description.toLowerCase().includes(keyword)
-      );
-    }
-    
-    if (filters.location) {
-      const location = filters.location.toLowerCase();
-      filteredJobs = filteredJobs.filter(job => 
-        job.location.toLowerCase().includes(location)
-      );
-    }
-    
-    if (filters.jobType) {
-      filteredJobs = filteredJobs.filter(job => job.jobType === filters.jobType);
-    }
-    
-    if (filters.industry) {
-      filteredJobs = filteredJobs.filter(job => job.industry === filters.industry);
-    }
-    
-    // More filters can be applied similarly
-    
-    return filteredJobs;
-  }
-  
-  return jobs;
-};
-
-// Export mock data for development use
-export const mockAPI = {
-  getCourses: getMockCourses,
-  getColleges: getMockColleges,
-  getJobs: getMockJobs,
-};
+    // Additional colleges for BBA (courseId: 4)
+    {
+      id: 22,
+      name: "Christ University",
+      description: "Christ University is known for its holistic approach to business education with strong industry connections.",
+      location: "Bangalore",
+      avgSalary: "₹7-12 LPA",
+      fees: "₹1.5 Lakhs per year",
+      companies: ["Deloitte", "KPMG", "EY", "Accenture", "Capgemini"],
+      applicationDeadline: "April 10, 2025",
+      applicationProcess: "Christ University Entrance Test and interview",
+      imageUrl: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1000&auto=format&fit=crop",
+      websiteUrl: "https://www.christuniversity.in/",
+      courseId: 4
+    },
+    {
+      id: 23,
+      name: "Symbiosis Centre for Management Studies",
+      description: "SCMS provides industry-oriented business education with emphasis on practical exposure and entrepreneurship.",
+      location: "Pune",
+      avgSalary: "₹8-14 LPA",
+      fees: "₹2.2 Lakhs per year",
+      companies: ["Amazon", "Flipkart", "HSBC", "HDFC Bank", "Infosys"],
+      applicationDeadline: "February 28, 2025",
+      applicationProcess: "SET entrance exam followed by GE-PI",
+      imageUrl: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1000&auto=format&fit=crop",
+      websiteUrl: "https://www.symbiosis.ac.in/",
+      courseId
