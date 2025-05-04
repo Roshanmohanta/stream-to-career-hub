@@ -891,6 +891,147 @@ export const mockAPI = {
         ],
         companyLogoUrl: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1000&auto=format&fit=crop",
         applicationUrl: "https://cloudnative.example.com/careers/devops-engineer"
+      },
+      // New jobs being added below
+      {
+        id: 6,
+        title: "Frontend Developer",
+        company: "WebVision Tech",
+        location: "Bangalore, India",
+        jobType: "Full-time",
+        salary: "₹10-16 LPA",
+        experience: "2-4 years",
+        postedDate: "2025-04-18",
+        deadline: "2025-06-01",
+        description: "Join our team to build beautiful, responsive user interfaces using modern frontend technologies and frameworks.",
+        requirements: [
+          "Bachelor's degree in Computer Science or related field",
+          "2-4 years of experience in frontend development",
+          "Strong proficiency in React, Next.js, or Angular",
+          "Experience with state management solutions like Redux or MobX",
+          "Knowledge of CSS preprocessors and modern CSS practices"
+        ],
+        responsibilities: [
+          "Develop responsive and accessible web applications",
+          "Collaborate with designers to implement UI/UX designs",
+          "Optimize applications for maximum speed and scalability",
+          "Write reusable components and libraries",
+          "Stay updated with emerging trends and technologies"
+        ],
+        companyLogoUrl: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?q=80&w=1000&auto=format&fit=crop",
+        applicationUrl: "https://webvision.example.com/careers/frontend-developer"
+      },
+      {
+        id: 7,
+        title: "Machine Learning Engineer",
+        company: "AI Innovations",
+        location: "Hyderabad, India",
+        jobType: "Full-time",
+        salary: "₹16-25 LPA",
+        experience: "3-6 years",
+        postedDate: "2025-04-15",
+        deadline: "2025-05-31",
+        description: "We are looking for a Machine Learning Engineer to develop and deploy AI models that solve real-world business problems.",
+        requirements: [
+          "Master's or PhD in Computer Science, Machine Learning, or related field",
+          "3-6 years of experience in machine learning or AI",
+          "Proficiency in Python and ML frameworks like TensorFlow or PyTorch",
+          "Experience with NLP or computer vision projects",
+          "Knowledge of cloud platforms and MLOps practices"
+        ],
+        responsibilities: [
+          "Design and implement machine learning algorithms",
+          "Train and optimize models for production use",
+          "Collaborate with data scientists and engineers",
+          "Deploy and monitor ML systems in production",
+          "Research and implement new AI techniques"
+        ],
+        companyLogoUrl: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?q=80&w=1000&auto=format&fit=crop",
+        applicationUrl: "https://ai-innovations.example.com/careers/ml-engineer"
+      },
+      {
+        id: 8,
+        title: "Technical Content Writer",
+        company: "TechDocs Media",
+        location: "Remote, India",
+        jobType: "Part-time",
+        salary: "₹6-10 LPA",
+        experience: "1-3 years",
+        postedDate: "2025-04-30",
+        deadline: "2025-06-10",
+        description: "Create technical content including tutorials, documentation, and blog posts for software development tools and platforms.",
+        requirements: [
+          "Bachelor's degree in Computer Science, Technical Writing, or equivalent",
+          "1-3 years experience in technical writing or documentation",
+          "Strong understanding of software development concepts",
+          "Experience with documentation tools like Markdown, AsciiDoc, or Sphinx",
+          "Excellent written communication skills"
+        ],
+        responsibilities: [
+          "Write clear and concise technical documentation",
+          "Create tutorials and how-to guides for developers",
+          "Collaborate with engineering teams to understand products",
+          "Edit and review content for accuracy and clarity",
+          "Research technical topics and stay updated with industry trends"
+        ],
+        companyLogoUrl: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1000&auto=format&fit=crop",
+        applicationUrl: "https://techdocs.example.com/careers/technical-writer"
+      },
+      {
+        id: 9,
+        title: "Project Manager",
+        company: "Global Solutions Inc.",
+        location: "Mumbai, India",
+        jobType: "Full-time",
+        salary: "₹15-22 LPA",
+        experience: "5-8 years",
+        postedDate: "2025-04-25",
+        deadline: "2025-05-31",
+        description: "Lead cross-functional teams to deliver technology projects on time, within scope, and on budget for our enterprise clients.",
+        requirements: [
+          "Bachelor's or Master's degree in Business or related technical field",
+          "5-8 years of project management experience",
+          "PMP or other project management certification preferred",
+          "Strong knowledge of agile and waterfall methodologies",
+          "Experience with project management tools (JIRA, Asana, etc.)"
+        ],
+        responsibilities: [
+          "Plan, execute, and close projects efficiently",
+          "Manage project scope, schedule, resources, and budget",
+          "Lead cross-functional teams and stakeholder communications",
+          "Identify and mitigate project risks",
+          "Report project status to executive leadership"
+        ],
+        companyLogoUrl: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1000&auto=format&fit=crop",
+        applicationUrl: "https://globalsolutions.example.com/careers/project-manager"
+      },
+      {
+        id: 10,
+        title: "Cybersecurity Analyst",
+        company: "SecureNet Defenders",
+        location: "Delhi, India",
+        jobType: "Full-time",
+        salary: "₹12-18 LPA",
+        experience: "2-5 years",
+        postedDate: "2025-04-22",
+        deadline: "2025-05-28",
+        description: "Join our security team to protect our organization's digital assets from cyber threats and ensure compliance with security standards.",
+        requirements: [
+          "Bachelor's degree in Cybersecurity, Computer Science, or related field",
+          "2-5 years of experience in information security",
+          "Security certifications (CISSP, CEH, Security+) preferred",
+          "Knowledge of security frameworks (ISO 27001, NIST)",
+          "Experience with security tools and monitoring systems"
+        ],
+        responsibilities: [
+          "Monitor systems for security breaches and incidents",
+          "Perform vulnerability assessments and penetration testing",
+          "Implement security measures and controls",
+          "Respond to security incidents and conduct investigations",
+          "Develop security policies and procedures"
+        ],
+        companyLogoUrl: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7?q=80&w=1000&auto=format&fit=crop",
+        applicationUrl: "https://securenet.example.com/careers/security-analyst"
       }
     ];
 
