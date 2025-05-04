@@ -12,21 +12,21 @@ const streamInfo = {
     description:
       "Explore courses in Engineering, Medicine, Research, and Technology with a foundation in Physics, Chemistry, Biology or Mathematics.",
     icon: Beaker,
-    color: "bg-science",
+    color: "bg-blue-600",
   },
   commerce: {
     title: "Commerce",
     description:
       "Discover pathways in Business, Finance, Accounting, Economics, and Management for a career in the corporate world.",
     icon: TrendingUp,
-    color: "bg-commerce",
+    color: "bg-green-600",
   },
   arts: {
     title: "Arts & Humanities",
     description:
       "Pursue studies in Literature, History, Psychology, Sociology, Fine Arts, and other creative or social disciplines.",
     icon: Brush,
-    color: "bg-arts",
+    color: "bg-purple-600",
   },
 };
 
@@ -51,10 +51,10 @@ const StreamSelection = () => {
         {Object.entries(streamInfo).map(([key, { title, description, icon: Icon, color }]) => (
           <Card
             key={key}
-            className={`stream-card ${color} card-hover`}
+            className={`stream-card ${color} text-white card-hover`}
             onClick={() => handleStreamSelect(key as Stream)}
           >
-            <div className="flex flex-col items-center text-center">
+            <div className="flex flex-col items-center text-center p-6">
               <div className="p-4 rounded-full bg-white/20 mb-4">
                 <Icon className="h-8 w-8" />
               </div>

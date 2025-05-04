@@ -134,6 +134,99 @@ export const getMockCourses = (stream?: string) => {
       collegeCount: 12,
       imageUrl: "https://images.unsplash.com/photo-1576669801775-ff43c5ab079d?q=80&w=1000&auto=format&fit=crop"
     },
+    // New Science Courses
+    {
+      id: 8,
+      title: "B.Sc Chemistry",
+      description: "Bachelor of Science in Chemistry covers organic, inorganic, physical chemistry, and laboratory techniques essential for research and industry.",
+      duration: "3 Years",
+      eligibility: "10+2 with PCM, Min 55%",
+      stream: "science",
+      collegeCount: 14,
+      imageUrl: "https://images.unsplash.com/photo-1603126857599-f6e157fa2fe6?q=80&w=1000&auto=format&fit=crop"
+    },
+    {
+      id: 9,
+      title: "B.Tech Electronics",
+      description: "Bachelor of Technology in Electronics Engineering focuses on circuit design, signal processing, and communication systems.",
+      duration: "4 Years",
+      eligibility: "10+2 with PCM, Min 60%",
+      stream: "science",
+      collegeCount: 9,
+      imageUrl: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1000&auto=format&fit=crop"
+    },
+    {
+      id: 10,
+      title: "B.Sc Mathematics",
+      description: "Bachelor of Science in Mathematics covers algebra, calculus, statistics, and numerical analysis for analytical problem-solving skills.",
+      duration: "3 Years",
+      eligibility: "10+2 with Mathematics, Min 55%",
+      stream: "science",
+      collegeCount: 11,
+      imageUrl: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?q=80&w=1000&auto=format&fit=crop"
+    },
+    // New Commerce Courses
+    {
+      id: 11,
+      title: "Chartered Accountancy",
+      description: "Professional course covering accounting, auditing, taxation, and financial management for aspiring accountants.",
+      duration: "3-5 Years",
+      eligibility: "10+2 Commerce, Min 55%",
+      stream: "commerce",
+      collegeCount: 7,
+      imageUrl: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=1000&auto=format&fit=crop"
+    },
+    {
+      id: 12,
+      title: "Bachelor of Economics",
+      description: "Bachelor degree focusing on economic theories, models, policy analysis, and financial systems.",
+      duration: "3 Years",
+      eligibility: "10+2 in Commerce/Arts with Economics, Min 50%",
+      stream: "commerce",
+      collegeCount: 13,
+      imageUrl: "https://images.unsplash.com/photo-1543286386-2e659306cd6c?q=80&w=1000&auto=format&fit=crop"
+    },
+    {
+      id: 13,
+      title: "Hotel Management",
+      description: "Bachelor's program covering hospitality operations, food service management, and customer relations.",
+      duration: "3-4 Years",
+      eligibility: "10+2 in any stream, Min 50%",
+      stream: "commerce",
+      collegeCount: 8,
+      imageUrl: "https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=1000&auto=format&fit=crop"
+    },
+    // New Arts Courses
+    {
+      id: 14,
+      title: "BA Sociology",
+      description: "Bachelor of Arts in Sociology examines social structures, human interactions, and cultural phenomena across different societies.",
+      duration: "3 Years",
+      eligibility: "10+2 in any stream, Min 45%",
+      stream: "arts",
+      collegeCount: 9,
+      imageUrl: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=1000&auto=format&fit=crop"
+    },
+    {
+      id: 15,
+      title: "Bachelor of Fine Arts",
+      description: "BFA program focuses on visual arts including painting, sculpture, photography, and digital media.",
+      duration: "4 Years",
+      eligibility: "10+2 in any stream + Portfolio, Min 50%",
+      stream: "arts",
+      collegeCount: 6,
+      imageUrl: "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?q=80&w=1000&auto=format&fit=crop"
+    },
+    {
+      id: 16,
+      title: "Mass Communication",
+      description: "Bachelor's degree covering journalism, media production, advertising, and public relations.",
+      duration: "3 Years",
+      eligibility: "10+2 in any stream, Min 50%",
+      stream: "arts",
+      collegeCount: 10,
+      imageUrl: "https://images.unsplash.com/photo-1503298506553-467f6af0cb8e?q=80&w=1000&auto=format&fit=crop"
+    }
   ];
   
   if (stream) {
@@ -202,6 +295,163 @@ export const getMockColleges = (courseId?: number) => {
       websiteUrl: "https://www.srcc.edu/",
       courseId: 5
     },
+    // New Science Colleges
+    {
+      id: 5,
+      name: "Indian Institute of Science",
+      description: "IISc is India's premier research institute offering advanced education in various scientific disciplines with state-of-the-art laboratories.",
+      location: "Bangalore",
+      avgSalary: "₹14-22 LPA",
+      fees: "₹1.8 Lakhs per year",
+      companies: ["ISRO", "DRDO", "Intel", "Samsung", "IBM"],
+      applicationDeadline: "April 15, 2025",
+      applicationProcess: "GATE score followed by interview",
+      imageUrl: "https://images.unsplash.com/photo-1591123120675-6f7f1aae0e5b?q=80&w=1000&auto=format&fit=crop",
+      websiteUrl: "https://www.iisc.ac.in/",
+      courseId: 3
+    },
+    {
+      id: 6,
+      name: "Birla Institute of Technology and Science",
+      description: "BITS Pilani is known for its rigorous technical education and industry connections across engineering and science disciplines.",
+      location: "Pilani",
+      avgSalary: "₹12-20 LPA",
+      fees: "₹2.0 Lakhs per year",
+      companies: ["Oracle", "Adobe", "Qualcomm", "Texas Instruments", "Cisco"],
+      applicationDeadline: "May 20, 2025",
+      applicationProcess: "BITSAT entrance exam",
+      imageUrl: "https://images.unsplash.com/photo-1595113229230-10f8ef6b26ae?q=80&w=1000&auto=format&fit=crop",
+      websiteUrl: "https://www.bits-pilani.ac.in/",
+      courseId: 1
+    },
+    {
+      id: 7,
+      name: "Christian Medical College",
+      description: "CMC Vellore is one of India's top medical institutions known for excellent clinical training and community health programs.",
+      location: "Vellore",
+      avgSalary: "₹10-16 LPA",
+      fees: "₹1.2 Lakhs per year",
+      companies: ["Apollo Hospitals", "Manipal Hospitals", "Medanta"],
+      applicationDeadline: "May 31, 2025",
+      applicationProcess: "NEET-UG followed by CMC entrance exam",
+      imageUrl: "https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=1000&auto=format&fit=crop",
+      websiteUrl: "https://www.cmch-vellore.edu/",
+      courseId: 2
+    },
+    // New Commerce Colleges
+    {
+      id: 8,
+      name: "Faculty of Management Studies",
+      description: "FMS Delhi offers top-tier management education with a focus on practical business skills and strategic thinking.",
+      location: "Delhi",
+      avgSalary: "₹20-32 LPA",
+      fees: "₹1.9 Lakhs total",
+      companies: ["BCG", "McKinsey", "Amazon", "Deloitte", "Accenture"],
+      applicationDeadline: "January 15, 2025",
+      applicationProcess: "CAT score followed by interview",
+      imageUrl: "https://images.unsplash.com/photo-1606761568499-6d2451b23c66?q=80&w=1000&auto=format&fit=crop",
+      websiteUrl: "https://www.fms.edu/",
+      courseId: 4
+    },
+    {
+      id: 9,
+      name: "Narsee Monjee Institute of Management Studies",
+      description: "NMIMS is renowned for its commerce and business programs with strong industry connections and practical training.",
+      location: "Mumbai",
+      avgSalary: "₹10-18 LPA",
+      fees: "₹1.4 Lakhs per year",
+      companies: ["Ernst & Young", "HDFC Bank", "Infosys", "TCS", "Wipro"],
+      applicationDeadline: "April 10, 2025",
+      applicationProcess: "NMIMS entrance test",
+      imageUrl: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1000&auto=format&fit=crop",
+      websiteUrl: "https://www.nmims.edu/",
+      courseId: 5
+    },
+    {
+      id: 10,
+      name: "Institute of Chartered Accountants of India",
+      description: "ICAI is the apex professional body for chartered accountants in India, providing high-quality education and certification.",
+      location: "Multiple Centers",
+      avgSalary: "₹8-25 LPA",
+      fees: "₹80,000 total",
+      companies: ["Deloitte", "KPMG", "PwC", "EY", "Grant Thornton"],
+      applicationDeadline: "March 1, 2025 / September 1, 2025",
+      applicationProcess: "CA Foundation entrance exam",
+      imageUrl: "https://images.unsplash.com/photo-1554224155-1696413565d3?q=80&w=1000&auto=format&fit=crop",
+      websiteUrl: "https://www.icai.org/",
+      courseId: 11
+    },
+    // New Arts Colleges
+    {
+      id: 11,
+      name: "Lady Shri Ram College for Women",
+      description: "LSR is one of India's premier institutions for women's education in humanities and social sciences with an excellent academic reputation.",
+      location: "Delhi",
+      avgSalary: "₹5-10 LPA",
+      fees: "₹30,000 per year",
+      companies: ["Times Group", "HarperCollins", "Penguin", "Oxford University Press"],
+      applicationDeadline: "June 20, 2025",
+      applicationProcess: "Merit-based through university portal",
+      imageUrl: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=1000&auto=format&fit=crop",
+      websiteUrl: "https://www.lsr.edu.in/",
+      courseId: 6
+    },
+    {
+      id: 12,
+      name: "Symbiosis Centre for Media & Communication",
+      description: "SCMC is a leading institute for media education with industry-relevant curriculum and state-of-the-art production facilities.",
+      location: "Pune",
+      avgSalary: "₹6-12 LPA",
+      fees: "₹2.8 Lakhs per year",
+      companies: ["Viacom18", "Sony Pictures", "Star India", "Ogilvy", "FCB"],
+      applicationDeadline: "February 28, 2025",
+      applicationProcess: "SET entrance exam followed by PI",
+      imageUrl: "https://images.unsplash.com/photo-1503298506053-867d7f3a42e2?q=80&w=1000&auto=format&fit=crop",
+      websiteUrl: "https://www.scmc.edu.in/",
+      courseId: 16
+    },
+    {
+      id: 13,
+      name: "National Institute of Design",
+      description: "NID is India's premier design institute offering comprehensive education in various design disciplines with focus on innovation.",
+      location: "Ahmedabad",
+      avgSalary: "₹8-15 LPA",
+      fees: "₹3.8 Lakhs per year",
+      companies: ["Apple", "Google", "Microsoft", "Titan", "Samsung"],
+      applicationDeadline: "January 10, 2025",
+      applicationProcess: "Design Aptitude Test followed by interview",
+      imageUrl: "https://images.unsplash.com/photo-1558655146-9f40138edfeb?q=80&w=1000&auto=format&fit=crop",
+      websiteUrl: "https://www.nid.edu/",
+      courseId: 15
+    },
+    {
+      id: 14,
+      name: "Fergusson College",
+      description: "Fergusson College is known for its strong liberal arts programs and research-oriented approach to education.",
+      location: "Pune",
+      avgSalary: "₹4-8 LPA",
+      fees: "₹25,000 per year",
+      companies: ["ThoughtWorks", "Cognizant", "Infosys", "Capgemini"],
+      applicationDeadline: "June 15, 2025",
+      applicationProcess: "Merit-based through university portal",
+      imageUrl: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1000&auto=format&fit=crop",
+      websiteUrl: "https://www.fergusson.edu/",
+      courseId: 14
+    },
+    {
+      id: 15,
+      name: "Jawaharlal Nehru University",
+      description: "JNU is renowned for its exceptional social sciences and humanities programs with a focus on critical thinking and research.",
+      location: "New Delhi",
+      avgSalary: "₹5-9 LPA",
+      fees: "₹15,000 per year",
+      companies: ["UNDP", "UNESCO", "Think Tanks", "Research Organizations"],
+      applicationDeadline: "March 31, 2025",
+      applicationProcess: "JNU Entrance Examination",
+      imageUrl: "https://images.unsplash.com/photo-1607237138185-eedd9c632b0b?q=80&w=1000&auto=format&fit=crop",
+      websiteUrl: "https://www.jnu.ac.in/",
+      courseId: 7
+    }
   ];
   
   if (courseId) {
