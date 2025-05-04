@@ -1,7 +1,7 @@
 
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { Flask, TrendingUp, Brush } from "lucide-react";
+import { Beaker, TrendingUp, Brush } from "lucide-react";
 import { Card } from "@/components/ui/card";
 
 type Stream = "science" | "commerce" | "arts";
@@ -11,7 +11,7 @@ const streamInfo = {
     title: "Science",
     description:
       "Explore courses in Engineering, Medicine, Research, and Technology with a foundation in Physics, Chemistry, Biology or Mathematics.",
-    icon: Flask,
+    icon: Beaker,
     color: "bg-science",
   },
   commerce: {
