@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -18,7 +17,7 @@ const Jobs = () => {
     const fetchJobs = async () => {
       setLoading(true);
       try {
-        // In a real app, we'd use the real API
+        // Use the mockAPI.getJobs method to get job data
         const jobsData = mockAPI.getJobs();
         setJobs(jobsData);
       } catch (error) {

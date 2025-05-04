@@ -1,4 +1,3 @@
-
 import { toast } from "@/components/ui/sonner";
 
 // Define the base API URL
@@ -749,5 +748,169 @@ export const mockAPI = {
   },
   getCollegeById: (id: number) => {
     return getMockColleges().find(college => college.id === id);
+  },
+  getJobs: (filters?: Record<string, any>) => {
+    // Sample job data
+    const jobs = [
+      {
+        id: 1,
+        title: "Software Developer",
+        company: "TechCorp Solutions",
+        location: "Bangalore, India",
+        jobType: "Full-time",
+        salary: "₹12-18 LPA",
+        experience: "2-4 years",
+        postedDate: "2025-04-20",
+        deadline: "2025-06-15",
+        description: "We are looking for a skilled Software Developer to join our team to design, develop and implement high-quality software solutions.",
+        requirements: [
+          "Bachelor's degree in Computer Science or related field",
+          "2-4 years of experience in software development",
+          "Proficiency in JavaScript, TypeScript, and React",
+          "Experience with Node.js and database technologies",
+          "Good problem-solving skills"
+        ],
+        responsibilities: [
+          "Develop and maintain high-quality software",
+          "Collaborate with cross-functional teams",
+          "Debug and fix issues in existing applications",
+          "Write clean, maintainable code with proper documentation",
+          "Participate in code reviews and knowledge sharing"
+        ],
+        companyLogoUrl: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1000&auto=format&fit=crop",
+        applicationUrl: "https://techcorp.example.com/careers/software-developer"
+      },
+      {
+        id: 2,
+        title: "Data Scientist",
+        company: "AnalyticsFirst",
+        location: "Hyderabad, India",
+        jobType: "Full-time",
+        salary: "₹15-22 LPA",
+        experience: "3-5 years",
+        postedDate: "2025-04-25",
+        deadline: "2025-05-25",
+        description: "Join our data science team to build predictive models and extract valuable insights from large datasets to drive business decisions.",
+        requirements: [
+          "Master's or PhD in Statistics, Computer Science, or related field",
+          "3-5 years of experience in data science or analytics",
+          "Strong knowledge of statistical analysis and machine learning algorithms",
+          "Proficiency in Python, R, and SQL",
+          "Experience with big data technologies"
+        ],
+        responsibilities: [
+          "Develop and implement machine learning models",
+          "Extract insights from complex datasets",
+          "Create data visualizations and dashboards",
+          "Collaborate with business teams to understand requirements",
+          "Present findings to technical and non-technical stakeholders"
+        ],
+        companyLogoUrl: "https://images.unsplash.com/photo-1543286386-713bdd548da4?q=80&w=1000&auto=format&fit=crop",
+        applicationUrl: "https://analyticsfirst.example.com/careers/data-scientist"
+      },
+      {
+        id: 3,
+        title: "UI/UX Designer",
+        company: "DesignWave Studios",
+        location: "Mumbai, India",
+        jobType: "Full-time",
+        salary: "₹8-14 LPA",
+        experience: "2-4 years",
+        postedDate: "2025-04-28",
+        deadline: "2025-05-28",
+        description: "We're seeking a creative UI/UX Designer to create engaging and intuitive user experiences for web and mobile applications.",
+        requirements: [
+          "Bachelor's degree in Design, HCI, or related field",
+          "2-4 years of experience in UI/UX design",
+          "Proficiency in Figma, Adobe XD, and other design tools",
+          "Understanding of user research and usability testing",
+          "Portfolio demonstrating UI/UX projects"
+        ],
+        responsibilities: [
+          "Create wireframes, prototypes, and high-fidelity designs",
+          "Conduct user research and usability testing",
+          "Collaborate with product managers and developers",
+          "Create and maintain design systems",
+          "Stay updated with latest design trends and best practices"
+        ],
+        companyLogoUrl: "https://images.unsplash.com/photo-1558655146-d09347e92766?q=80&w=1000&auto=format&fit=crop",
+        applicationUrl: "https://designwave.example.com/careers/ui-ux-designer"
+      },
+      {
+        id: 4,
+        title: "Product Manager",
+        company: "InnovateTech",
+        location: "Delhi, India",
+        jobType: "Full-time",
+        salary: "₹18-25 LPA",
+        experience: "4-6 years",
+        postedDate: "2025-04-15",
+        deadline: "2025-05-20",
+        description: "We are looking for an experienced Product Manager to lead our product development initiatives and drive user satisfaction.",
+        requirements: [
+          "Bachelor's or Master's degree in Business, Engineering or related field",
+          "4-6 years of experience in product management",
+          "Strong understanding of product development lifecycle",
+          "Experience with agile methodologies",
+          "Excellent communication and leadership skills"
+        ],
+        responsibilities: [
+          "Define product vision, strategy, and roadmap",
+          "Gather and prioritize product requirements",
+          "Work with engineering teams to deliver features",
+          "Analyze market trends and competition",
+          "Track and measure product performance metrics"
+        ],
+        companyLogoUrl: "https://images.unsplash.com/photo-1560179707-f14e90ef3623?q=80&w=1000&auto=format&fit=crop",
+        applicationUrl: "https://innovatetech.example.com/careers/product-manager"
+      },
+      {
+        id: 5,
+        title: "DevOps Engineer",
+        company: "CloudNative Systems",
+        location: "Pune, India",
+        jobType: "Full-time",
+        salary: "₹14-20 LPA",
+        experience: "3-5 years",
+        postedDate: "2025-04-22",
+        deadline: "2025-05-30",
+        description: "Join our team to build and maintain our cloud infrastructure and improve our CI/CD pipelines for faster and more reliable deployments.",
+        requirements: [
+          "Bachelor's degree in Computer Science or related field",
+          "3-5 years of experience in DevOps or similar role",
+          "Experience with AWS, Azure, or Google Cloud",
+          "Knowledge of containerization (Docker, Kubernetes)",
+          "Experience with CI/CD tools (Jenkins, GitLab CI)"
+        ],
+        responsibilities: [
+          "Design and implement cloud infrastructure",
+          "Automate deployment processes",
+          "Monitor system performance and troubleshoot issues",
+          "Implement security best practices",
+          "Collaborate with development teams to streamline processes"
+        ],
+        companyLogoUrl: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1000&auto=format&fit=crop",
+        applicationUrl: "https://cloudnative.example.com/careers/devops-engineer"
+      }
+    ];
+
+    // Apply filters if provided
+    if (filters && Object.keys(filters).length > 0) {
+      return jobs.filter(job => {
+        // Simple filtering logic - can be expanded based on requirements
+        if (filters.jobType && job.jobType !== filters.jobType) return false;
+        if (filters.location && !job.location.includes(filters.location)) return false;
+        if (filters.experience) {
+          // Example filtering for experience
+          const minExp = parseInt(job.experience.split('-')[0]);
+          if (filters.experience === "0-2" && minExp > 2) return false;
+          if (filters.experience === "3-5" && (minExp < 3 || minExp > 5)) return false;
+          if (filters.experience === "5+" && minExp < 5) return false;
+        }
+        return true;
+      });
+    }
+
+    return jobs;
   }
 };
