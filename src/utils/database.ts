@@ -16,8 +16,26 @@ const handleResponse = async (response: Response) => {
 // Generic fetch function with error handling
 const fetchAPI = async (endpoint: string, options = {}) => {
   try {
-    const response = await fetch(`${API_URL}${endpoint}`, options);
-    return await handleResponse(response);
+    const defaultOptions = {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    };
+    
+    const mergedOptions = {
+      ...defaultOptions,
+      ...options,
+      headers: {
+        ...defaultOptions.headers,
+        ...(options as any).headers,
+      },
+    };
+
+    console.log(`Making request to: ${API_URL}${endpoint}`, mergedOptions);
+    const response = await fetch(`${API_URL}${endpoint}`, mergedOptions);
+    const result = await handleResponse(response);
+    console.log(`Response from ${endpoint}:`, result);
+    return result;
   } catch (error) {
     console.error(`API Error (${endpoint}):`, error);
     toast.error("API Error", {
@@ -96,73 +114,110 @@ const getJobById = async (id: number) => {
 
 // Admin operations
 const addCourse = async (course: any) => {
+  console.log("Adding course:", course);
   return fetchAPI('/admin/courses', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(course)
+  }).then(result => {
+    toast.success("Course added successfully");
+    return result;
   });
 };
 
 const updateCourse = async (id: number, course: any) => {
+  console.log("Updating course:", id, course);
   return fetchAPI(`/admin/courses/${id}`, {
     method: 'PUT',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(course)
+  }).then(result => {
+    toast.success("Course updated successfully");
+    return result;
   });
 };
 
 const deleteCourse = async (id: number) => {
+  console.log("Deleting course:", id);
   return fetchAPI(`/admin/courses/${id}`, {
     method: 'DELETE'
+  }).then(result => {
+    toast.success("Course deleted successfully");
+    return result;
   });
 };
 
 const addCollege = async (college: any) => {
+  console.log("Adding college:", college);
   return fetchAPI('/admin/colleges', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(college)
+  }).then(result => {
+    toast.success("College added successfully");
+    return result;
   });
 };
 
 const updateCollege = async (id: number, college: any) => {
+  console.log("Updating college:", id, college);
   return fetchAPI(`/admin/colleges/${id}`, {
     method: 'PUT',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(college)
+  }).then(result => {
+    toast.success("College updated successfully");
+    return result;
   });
 };
 
 const deleteCollege = async (id: number) => {
+  console.log("Deleting college:", id);
   return fetchAPI(`/admin/colleges/${id}`, {
     method: 'DELETE'
+  }).then(result => {
+    toast.success("College deleted successfully");
+    return result;
   });
 };
 
 const addJob = async (job: any) => {
+  console.log("Adding job:", job);
   return fetchAPI('/admin/jobs', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(job)
+  }).then(result => {
+    toast.success("Job added successfully");
+    return result;
   });
 };
 
 const updateJob = async (id: number, job: any) => {
+  console.log("Updating job:", id, job);
   return fetchAPI(`/admin/jobs/${id}`, {
     method: 'PUT',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(job)
+  }).then(result => {
+    toast.success("Job updated successfully");
+    return result;
   });
 };
 
 const deleteJob = async (id: number) => {
+  console.log("Deleting job:", id);
   return fetchAPI(`/admin/jobs/${id}`, {
     method: 'DELETE'
+  }).then(result => {
+    toast.success("Job deleted successfully");
+    return result;
   });
 };
 
 // User authentication
 const authenticateUser = async (username: string, password: string) => {
+  console.log("Authenticating user:", username);
   return fetchAPI('/auth/login', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
