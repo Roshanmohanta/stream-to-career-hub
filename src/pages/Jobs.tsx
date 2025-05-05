@@ -4,10 +4,9 @@ import Footer from "@/components/Footer";
 import SearchFilters from "@/components/SearchFilters";
 import JobCard, { JobProps } from "@/components/JobCard";
 import { Briefcase } from "lucide-react";
-import { mockAPI } from "@/services/api";
 import { Button } from "@/components/ui/button";
 import { toast } from "@/components/ui/sonner";
-import { executeTransaction } from "@/utils/database";
+import { executeTransaction, getJobs } from "@/utils/database";
 
 const Jobs = () => {
   const [jobs, setJobs] = useState<JobProps[]>([]);
@@ -17,8 +16,8 @@ const Jobs = () => {
     const fetchJobs = async () => {
       setLoading(true);
       try {
-        // Use the mockAPI.getJobs method to get job data
-        const jobsData = mockAPI.getJobs();
+        // Use the getJobs function to fetch data from the backend
+        const jobsData = await getJobs();
         setJobs(jobsData);
       } catch (error) {
         console.error("Error fetching jobs:", error);
@@ -40,14 +39,13 @@ const Jobs = () => {
       const transactionSuccess = await executeTransaction([
         async () => {
           console.log("Starting job search transaction with filters:", filters);
-          // In a real app, this would be a database query
           return true;
         },
       ]);
 
       if (transactionSuccess) {
-        // In a real app, we'd use the real API with filters
-        const filteredJobs = mockAPI.getJobs(filters);
+        // Use real API with filters
+        const filteredJobs = await getJobs(filters);
         setJobs(filteredJobs);
         
         if (filteredJobs.length === 0) {

@@ -1,31 +1,39 @@
+
 import { toast } from "@/components/ui/sonner";
-import { mockAPI } from "@/services/api";
 
-// Note: This is a client-side application that cannot directly connect to MySQL.
-// We're using mock data instead but keeping the same function signatures for consistency.
-// In a real application, these functions would make HTTP requests to a backend API.
-// The MySQL code is kept for reference but not executed in the browser.
+// API Base URL - update this based on where your backend is running
+const API_URL = 'http://localhost:5000/api';
 
-// Client-side mock functions that mimic database operations
-const executeQuery = async (query: string, params: any[] = []) => {
-  console.log("Mock executeQuery called with:", query, params);
+// Helper function to handle API responses
+const handleResponse = async (response: Response) => {
+  if (!response.ok) {
+    const errorData = await response.json().catch(() => ({ message: 'Unknown error' }));
+    throw new Error(errorData.message || `API Error: ${response.status}`);
+  }
+  return response.json();
+};
+
+// Generic fetch function with error handling
+const fetchAPI = async (endpoint: string, options = {}) => {
   try {
-    // Mock a successful query result
-    return { success: true, data: [] };
+    const response = await fetch(`${API_URL}${endpoint}`, options);
+    return await handleResponse(response);
   } catch (error) {
-    console.error("Query execution failed:", error);
-    toast.error("Database error", {
-      description: "Failed to execute database operation.",
+    console.error(`API Error (${endpoint}):`, error);
+    toast.error("API Error", {
+      description: error instanceof Error ? error.message : "An unknown error occurred",
     });
     throw error;
   }
 };
 
+// Execute transaction is now handled on the server side
+// This is a client-side placeholder that just executes functions in sequence
 const executeTransaction = async (operations: Function[]) => {
   try {
-    console.log("Starting mock transaction");
+    console.log("Starting client-side transaction");
     
-    // Execute all operations - they will just log in client environment
+    // Execute all operations
     for (const operation of operations) {
       await operation();
     }
@@ -45,149 +53,125 @@ const executeTransaction = async (operations: Function[]) => {
 
 // Stream operations
 const getStreams = async () => {
-  return mockAPI.getStreams();
+  return fetchAPI('/streams');
 };
 
 // Course operations
-const getCourses = async (streamId?: number) => {
-  return mockAPI.getCourses(streamId);
+const getCourses = async (streamId?: string) => {
+  const queryParams = streamId ? `?streamId=${streamId}` : '';
+  return fetchAPI(`/courses${queryParams}`);
 };
 
 const getCourseById = async (id: number) => {
-  const courses = mockAPI.getCourses();
-  return courses.find(course => course.id === id);
+  return fetchAPI(`/courses/${id}`);
 };
 
 // College operations
 const getCollegesByCourse = async (courseId: number) => {
-  return mockAPI.getCollegesByCourse(courseId);
+  return fetchAPI(`/colleges/by-course/${courseId}`);
 };
 
 const getCollegeById = async (id: number) => {
-  const college = mockAPI.getCollegeById(id);
-  
-  if (college) {
-    // Add companies information if not already present
-    if (!college.companies) {
-      college.companies = mockAPI.getCompaniesByCollege(id).map(company => company.name);
-    }
-  }
-  
-  return college;
+  return fetchAPI(`/colleges/${id}`);
 };
 
 // Job operations
 const getJobs = async (filters?: Record<string, any>) => {
-  return mockAPI.getJobs(filters);
+  let queryString = '';
+  
+  if (filters && Object.keys(filters).length > 0) {
+    queryString = '?' + new URLSearchParams(
+      Object.entries(filters)
+        .filter(([_, value]) => value !== undefined && value !== '')
+        .map(([key, value]) => [key, String(value)])
+    ).toString();
+  }
+  
+  return fetchAPI(`/jobs${queryString}`);
 };
 
 const getJobById = async (id: number) => {
-  const job = mockAPI.getJobById(id);
-  return job;
+  return fetchAPI(`/jobs/${id}`);
 };
 
 // Admin operations
 const addCourse = async (course: any) => {
-  console.log("Adding course (mock):", course);
-  toast.success("Course added successfully", {
-    description: "This is a mock operation. In a real app, this would be saved to a database.",
+  return fetchAPI('/admin/courses', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(course)
   });
-  return { insertId: Date.now() }; // Simulate an insert ID
 };
 
 const updateCourse = async (id: number, course: any) => {
-  console.log("Updating course (mock):", id, course);
-  toast.success("Course updated successfully", {
-    description: "This is a mock operation. In a real app, this would update the database.",
+  return fetchAPI(`/admin/courses/${id}`, {
+    method: 'PUT',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(course)
   });
-  return { affectedRows: 1 }; // Simulate affected rows
 };
 
 const deleteCourse = async (id: number) => {
-  console.log("Deleting course (mock):", id);
-  toast.success("Course deleted successfully", {
-    description: "This is a mock operation. In a real app, this would delete from the database.",
+  return fetchAPI(`/admin/courses/${id}`, {
+    method: 'DELETE'
   });
-  return { affectedRows: 1 }; // Simulate affected rows
 };
 
 const addCollege = async (college: any) => {
-  console.log("Adding college (mock):", college);
-  toast.success("College added successfully", {
-    description: "This is a mock operation. In a real app, this would be saved to a database.",
+  return fetchAPI('/admin/colleges', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(college)
   });
-  return { insertId: Date.now() }; // Simulate an insert ID
 };
 
 const updateCollege = async (id: number, college: any) => {
-  console.log("Updating college (mock):", id, college);
-  toast.success("College updated successfully", {
-    description: "This is a mock operation. In a real app, this would update the database.",
+  return fetchAPI(`/admin/colleges/${id}`, {
+    method: 'PUT',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(college)
   });
-  return { success: true };
 };
 
 const deleteCollege = async (id: number) => {
-  console.log("Deleting college (mock):", id);
-  toast.success("College deleted successfully", {
-    description: "This is a mock operation. In a real app, this would delete from the database.",
+  return fetchAPI(`/admin/colleges/${id}`, {
+    method: 'DELETE'
   });
-  return { affectedRows: 1 }; // Simulate affected rows
 };
 
 const addJob = async (job: any) => {
-  console.log("Adding job (mock):", job);
-  toast.success("Job added successfully", {
-    description: "This is a mock operation. In a real app, this would be saved to a database.",
+  return fetchAPI('/admin/jobs', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(job)
   });
-  return { insertId: Date.now() }; // Simulate an insert ID
 };
 
 const updateJob = async (id: number, job: any) => {
-  console.log("Updating job (mock):", id, job);
-  toast.success("Job updated successfully", {
-    description: "This is a mock operation. In a real app, this would update the database.",
+  return fetchAPI(`/admin/jobs/${id}`, {
+    method: 'PUT',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(job)
   });
-  return { success: true };
 };
 
 const deleteJob = async (id: number) => {
-  console.log("Deleting job (mock):", id);
-  toast.success("Job deleted successfully", {
-    description: "This is a mock operation. In a real app, this would delete from the database.",
+  return fetchAPI(`/admin/jobs/${id}`, {
+    method: 'DELETE'
   });
-  return { affectedRows: 1 }; // Simulate affected rows
 };
 
 // User authentication
 const authenticateUser = async (username: string, password: string) => {
-  // For demo purposes, we'll accept admin/admin123
-  if (username === "admin" && password === "admin123") {
-    return { 
-      success: true, 
-      user: { 
-        id: 1, 
-        username: "admin", 
-        role: "admin" 
-      } 
-    };
-  } else {
-    return { success: false, message: "Invalid username or password" };
-  }
-};
-
-// MySQL configuration (for server-side use only - not used in browser)
-const dbConfig = {
-  host: "localhost",
-  user: "root",
-  password: "Roshan@123",
-  database: "careerrecommendationdb",
+  return fetchAPI('/auth/login', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ username, password })
+  });
 };
 
 export { 
   executeTransaction, 
-  executeQuery, 
-  dbConfig,
   getStreams,
   getCourses,
   getCourseById,
